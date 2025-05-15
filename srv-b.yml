@@ -9,3 +9,6 @@ spring:
     consul:
       discovery:
         instance-id: ${spring.application.name}-${random.uuid}
+        health:
+          check:
+            interval: 30s
