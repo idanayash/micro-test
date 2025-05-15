@@ -1,8 +1,20 @@
 spring:
+  application:
+    name: gateway
+
   cloud:
+    consul:
+      discovery:
+        register: false  # חשוב – כדי שה-gateway לא ירשום את עצמו ל-Consul
+
     gateway:
       routes:
         - id: srv-b
-          uri: lb://srv-b/
+          uri: lb://srv-b  # שים לב: בלי '/' בסוף!
           predicates:
             - Path=/srv-b/**
+
+logging:
+  level:
+    org.springframework.cloud.gateway: DEBUG
+    reactor.netty: DEBUG
