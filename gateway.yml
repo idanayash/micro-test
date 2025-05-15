@@ -1,0 +1,9 @@
+
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: srv-b
+          url: lb://srv-b/
+          predicates:
+            - Path=/srv-b/**
