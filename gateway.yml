@@ -3,6 +3,6 @@ spring:
     gateway:
       routes:
         - id: srv-b
-          uri: lb://srv-b
+          uri: lb://srv-b/
           predicates:
             - Path=/srv-b/**
