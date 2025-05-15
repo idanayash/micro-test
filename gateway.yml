@@ -2,7 +2,7 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: srv-b
-          uri: lb://srv-b/
+        - id: srv-d
+          uri: lb://srv-d/
           predicates:
-            - Path=/srv-b/**
+            - Path=/srv-d/**
